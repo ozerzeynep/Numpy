@@ -105,4 +105,16 @@ print(np.random.randint(0,50,(4,4)))  #bu ifade bize 4 tane matris getirir
 print(np.random.randint(1,8,(3,3))) #bir ile sekiz arasında sayılar alır ve üçe üçlük bir matristen oluşur
 
 
+print(np.arange(1,15))  #arange ifadesi ile aralık belirtmiş oluyoruz 
+print(np.arange(1,15,3))
+
+
+print(np.linspace(0,30,5))   #belirli bir aralıktaki sayıları belirli bir adette eşit aralıklarla içeren bir dizi oluşturmak için kullanılır
+arr1 = np.linspace(0, 10, 3)
+print(arr1)
+
+
+m1 = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(m1.reshape(3,3))  #reshape metodu bir matrisin boyutunu değiştirmek için kullanılır
+print(m1.reshape(9))
 
