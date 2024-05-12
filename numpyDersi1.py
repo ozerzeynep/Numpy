@@ -118,3 +118,56 @@ m1 = np.array([[1,2,3],[4,5,6],[7,8,9]])
 print(m1.reshape(3,3))  #reshape metodu bir matrisin boyutunu değiştirmek için kullanılır
 print(m1.reshape(9))
 
+
+
+#PROJE1: RASTGELE MATRİS OLUŞTURMA VE İŞLEME ISI GRAFİĞİ OLUŞTURMA
+import numpy as np
+import matplotlib.pyplot as plt
+mtr = np.random.randint(1,60,(4,4))   #matris oluşturuldu
+print(mtr)
+print(mtr.dtype)
+print(mtr.astype)       #oluşturulan matrisin belirli özellikleri yazdırılmış oldu
+print(mtr.size)
+print(mtr.ndim)
+print(mtr.shape)
+
+ortalama = np.mean(mtr)   #mean ile matrisin ortalama değerini bulmuş olduk
+print(ortalama)
+
+toplam = np.sum(mtr)      #sum ile matrisin toplam değerini bulmuş olduk
+print(toplam)
+
+maximum = np.max(mtr)   #max ile matrisin en büyük değerini almış oluyoruz
+minimum = np.min(mtr)   #min ifadesi ile matrisin en küçük değerini almış oluyoruz
+print(maximum,minimum)
+
+satir_toplami = np.sum(mtr, axis=1)  #matrisin satır toplamını bize verir
+sutun_toplami = np.sum(mtr, axis=0)  #matrisin sütün toplamını bize verir
+print(satir_toplami, sutun_toplami)
+
+plt.imshow(mtr, cmap='hot', interpolation='nearest')
+plt.colorbar()  # Renk ölçeği ekleme
+plt.title('Matris Isı Haritası')    #oluşturulan matris ısı haritası olarak görselleştirilmiş oldu
+plt.show()
+
+
+
+
+
+#PROJE2:Matris Satır Toplamlarının Çizgi Grafiği Oluşturma
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Rastgele Matris Oluşturma
+matris = np.random.randint(1, 100, (6, 6))  # 6x6 boyutunda 1-100 arası rastgele sayılardan oluşan bir matris oluşturur
+
+# 2. Her Satırın Toplamını Bulma
+satir_toplamlari = np.sum(matris, axis=1)
+
+# 3. Çizgi Grafiği Oluşturma
+plt.plot(satir_toplamlari, marker='o', color='b', linestyle='-')
+plt.title('Matris Satır Toplamları')
+plt.xlabel('Satır Indeksleri')
+plt.ylabel('Toplam Değerler')
+plt.grid(True)  # Izgara ekleyerek grafiği daha okunabilir hale getirir
+plt.show()
